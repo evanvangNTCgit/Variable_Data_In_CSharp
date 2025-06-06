@@ -1,38 +1,37 @@
 ﻿/*
-string input = "Pad this";
- Console.WriteLine(input.PadLeft(12));
-Console.WriteLine(input.PadLeft(12, '-'));
-Console.WriteLine(input.PadRight(12, '-'));
+string message = "Help (find) the {opening symbols}";
+Console.WriteLine($"Searching THIS Message: {message}");
+char[] openSymbols = { '[', '{', '(' };
+int startPosition = 5;
+int openingPosition = message.IndexOfAny(openSymbols);
+Console.WriteLine($"Found WITHOUT using startPosition: {message.Substring(openingPosition)}");
 
-string paymentId = "769C";
- string payeeName = "Mr. Stephen Ortega";
- string paymentAmount = "$5,000.00";
+openingPosition = message.IndexOfAny(openSymbols, startPosition);
+Console.WriteLine($"Found WITH using startPosition {startPosition}:  {message.Substring(openingPosition)}");
+*/
+/*
+string data = "12345John Smith          5000  3  ";
+string updatedData = data.Remove(5, 20);
+Console.WriteLine(updatedData);
+*/
+/*
+string message = "This--is--ex-amp-le--da-ta";
+message = message.Replace("--", " ");
+message = message.Replace("-", "");
+Console.WriteLine(message);
+*/
 
- var formattedLine = paymentId.PadRight(6);
- formattedLine += payeeName.PadRight(24);
- formattedLine += paymentAmount.PadLeft(10);
+const string input = "<div><h2>Widgets &trade;</h2><span>5000</span></div>";
 
- Console.WriteLine("1234567890123456789012345678901234567890");
- Console.WriteLine(formattedLine); */
+string quantity = "";
+string output = "";
 
-string customerName = "Ms. Barros";
+// Your work here
+int spanIndex = input.IndexOf("<span>") + 6;
+int spanClosingIndex = input.IndexOf("</span>");
+quantity = input.Substring(spanIndex, (spanClosingIndex - spanIndex));
 
-string currentProduct = "Magic Yield";
-int currentShares = 2975000;
-decimal currentReturn = 0.1275m;
-decimal currentProfit = 55000000.0m;
 
-string newProduct = "Glorious Future";
-decimal newReturn = 0.13125m;
-decimal newProfit = 63000000.0m;
 
-System.Console.WriteLine("Dear {1} \nAs a customer of our {0} offering we are excited to tell you about a new financial product that would dramataically increase your return.", currentProduct, customerName);
-System.Console.WriteLine(($"\nCurrently, you own {currentShares} shares at a return of {currentReturn:P} \n Our new product, {newProduct} offers a return of {newReturn:P} given your current volume, your potential profit would be {newProfit:C}"));
-
-Console.WriteLine("Here's a quick comparison:\n");
-
-string comparisonMessage = "";
-comparisonMessage += $"{currentProduct.PadRight(20)}{currentReturn:P}  {currentProfit:c}\n";
-comparisonMessage += $"{newProduct.PadRight(20)}{newReturn:P}  {newProfit:c}";
-
-Console.WriteLine(comparisonMessage);
+Console.WriteLine(quantity);
+Console.WriteLine(output);
